@@ -26,7 +26,6 @@ linksInternos.forEach((link)=>{
 const todosElementos = document.querySelector('body');
 
 function elements(e){
-    console.log(e.target)
     e.target.remove()
 }
 
