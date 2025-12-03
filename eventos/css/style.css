@@ -8,7 +8,11 @@ body, h1, h2, ul, p, dd, dt, dl{
 
 
 .azul{
-    background-color: pink;
+    background-color: blue;
+}
+
+.size{  
+    height: 300px;
 }
 
 .textomaior{

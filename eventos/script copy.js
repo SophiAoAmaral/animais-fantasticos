@@ -1,58 +1,57 @@
 //const img = document.querySelector('img');
 
-//function callback(event){
-    //console.log(event)
+ //function callback(event){
+  //  console.log(this)
+    
 //}
 
 //img.addEventListener('click', callback);
 
-const animaisLista = document.querySelector('.animais-lista');
 
-function callbackLista(event){
-    console.log(event.target)
-    console.log(event.type)
+
+//const animaisLista = document.querySelector('.animais-lista');
+function callbackLista(e){
+    console.log(e.currentTarget);
+    console.log(e.target)
 }
 
-animaisLista.addEventListener('click', callbackLista);
+//animaisLista.addEventListener('click', callbackLista);
+
 
 const linkExterno = document.querySelector('a[href^="http"]');
 
-function handleLinkExterno(event){
-    event.preventDefault();
-    console.log(this)
-}
-
-linkExterno.addEventListener('click', handleLinkExterno);
-
-const h1 = document.querySelector("h1");
-
-function handleEvent(event){
-    console.log(event.type, event)
-
+function prevent(e){
+    e.preventDefault();
+    console.log(e.target)
+    console.log(this.getAttribute('href'));
 
 }
-//h1.addEventListener('click', handleEvent);
-//h1.addEventListener('mouseenter', handleEvent);
-
-//window.addEventListener('scroll', handleEvent);
-//window.addEventListener('keydown', handleEvent)
 
 
-function handlekeyBord(event){
-    if(event.key=== 'p'){
-        document.body.classList.toggle('azul')
+linkExterno.addEventListener('click', prevent);
+
+const h1 = document.querySelector('h1');
+
+function handle(e){
+    console.log(e.key)
+
+    if(e.key === 'e'){
+        document.documentElement.classList.toggle('textomaior');
+    }else if(e.key === 'a'){
+        document.documentElement.classList.toggle('azul');
     }
 }
 
-window.addEventListener('keydown', handlekeyBord);
+window.addEventListener('keydown', handle);
 
 
 const imgs = document.querySelectorAll('img');
 
-function handleImg(e){
+function aumenta(e){
     console.log(e.target)
 }
 
+
 imgs.forEach((img)=>{
-   img.addEventListener('click', handleImg)
-});
+    img.addEventListener('click', aumenta)
+})
